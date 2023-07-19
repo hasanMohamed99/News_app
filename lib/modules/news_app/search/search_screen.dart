@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/layout/news_app/cubit/cubit.dart';
 import 'package:news_app/layout/news_app/cubit/states.dart';
 import 'package:news_app/shared/components/components.dart';
+import 'package:news_app/shared/styles/colors.dart';
 
 class SearchScreen extends StatelessWidget {
   final searchController = TextEditingController();
@@ -13,6 +14,7 @@ class SearchScreen extends StatelessWidget {
     return BlocConsumer<NewsCubit,NewsStates>(
       listener: (context, state) {},
       builder: (context, state) {
+        Brightness curBright = Theme.of(context).brightness;
         var list = NewsCubit.get(context).search;
         return Scaffold(
           appBar: AppBar(),
@@ -36,12 +38,10 @@ class SearchScreen extends StatelessWidget {
                   },
                 ),
               ),
-              list.isEmpty?
-              const Center(child: CircularProgressIndicator(color: Colors.teal,)):
               Expanded(
                 child: ListView.separated(
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) => buildArticleItem(list[index],context),
+                  itemBuilder: (context, index) => buildArticleItem(list[index],context,currentBrightness: curBright),
                   separatorBuilder: (context, index) => myDivider(),
                   itemCount: list.length,
                 ),

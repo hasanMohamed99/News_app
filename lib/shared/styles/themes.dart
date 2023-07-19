@@ -1,56 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'colors.dart';
 
 ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
   primarySwatch: defaultColor,
-  scaffoldBackgroundColor: HexColor('333739'),
-  appBarTheme: AppBarTheme(
+  scaffoldBackgroundColor: const Color(0xff333739),
+  appBarTheme: const AppBarTheme(
     titleSpacing: 20.0,
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: HexColor('333739'),
+      statusBarColor: Color(0xff333739),
       statusBarIconBrightness: Brightness.light,
     ),
-    titleTextStyle: const TextStyle(
-      fontFamily: 'Janna',
+    titleTextStyle: TextStyle(
       color: Colors.white,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
-    iconTheme: const IconThemeData(
+    iconTheme: IconThemeData(
       color: Colors.white,
     ),
     elevation: 0.0,
-    backgroundColor: HexColor('333739'),
+    backgroundColor: Color(0xff333739),
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
     selectedItemColor: defaultColor,
     unselectedItemColor: Colors.grey,
-    backgroundColor: HexColor('333739'),
+    backgroundColor: Color(0xff333739),
     elevation: 20.0,
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.teal,
+    backgroundColor: defaultColor,
   ),
-  textTheme: const TextTheme(
-    bodyText1: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
-    ),
-    subtitle1: TextStyle(
-      fontSize: 14.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
-      height: 1.3,
-    ),
-  ),
-  fontFamily: 'Janna',
 );
 
 ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
   primarySwatch: defaultColor,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
@@ -61,7 +47,6 @@ ThemeData lightTheme = ThemeData(
     ),
     backgroundColor: Colors.white,
     titleTextStyle: TextStyle(
-      fontFamily: 'Janna',
       color: Colors.black,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
@@ -79,20 +64,6 @@ ThemeData lightTheme = ThemeData(
     elevation: 20.0,
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.teal,
+    backgroundColor: defaultColor,
   ),
-  textTheme: const TextTheme(
-    bodyText1: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
-    subtitle1: TextStyle(
-      fontSize: 14.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-      height: 1.3,
-    ),
-  ),
-  fontFamily: 'Janna',
 );

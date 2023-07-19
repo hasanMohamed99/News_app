@@ -44,4 +44,11 @@ class NewsGetSearchErrorState extends NewsStates {
   NewsGetSearchErrorState(this.error);
 }
 
+class AdLoadedState extends NewsStates {}
+
+class AdErrorState extends NewsStates {
+  final String error;
+  AdErrorState(this.error);
+}
+
 class AppChangeModeState extends NewsStates {}
